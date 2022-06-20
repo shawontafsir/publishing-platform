@@ -1,8 +1,20 @@
 # Simple Content Publishing Platform
 
+
+## Features:
+- Display created content list
+- See the details of a selected content
+- Permission to logged-in users for creating and 
+the author for editing a content with basic and rich text
+- Request Throttling
+- Backend APIs for managing dynamic text fields (create, 
+retrieve, update, delete) of the contents
+
+
 ## To Run The project:
 
 ### Back-end:
+
 ```
 // go to the backend directory
 $ cd backend
