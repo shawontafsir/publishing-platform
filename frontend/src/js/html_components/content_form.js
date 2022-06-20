@@ -48,7 +48,7 @@ export const readonly_content_form_component_for_editor = (content) => {
             <span>Created: ${content['created']}</span><br>
             <label for="body"></label><br>
             <div id="readonly_body">${content.body}</div><br>
-            <button id="edit_content" data-content-id="${content.id}">EDIT</button>
+            <button id="edit_content" data-content-id="${content.id}" style="margin-left: 50%;display: ${content['is_owner']? "block": "none"};">EDIT</button>
         </form>
     `;
 }

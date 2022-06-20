@@ -9,4 +9,5 @@ class ContentDataLayer:
 
     @classmethod
     def get_contents(cls, content_id=None):
-        return Content.objects.get(id=content_id) if content_id else Content.objects.filter(is_removed=False)
+        contents = Content.objects.filter(is_removed=False).select_related('author')
+        return contents.get(id=content_id) if content_id else contents
