@@ -19,6 +19,13 @@ class ContentTestCase(TestCase):
 
         return title, body
 
+    @classmethod
+    def create_single_text_field(cls):
+        return dict(
+            name="sub_title", field_type="basic",
+            value="".join([random.choice(string.ascii_letters + string.digits) for _ in range(100)])
+        )
+
     def obtain_jwt_token(self, username, password='12345'):
         response = self.client.post(
             reverse('token_obtain_pair'),
@@ -155,3 +162,16 @@ class ContentTestCase(TestCase):
                 )
 
             self.assertEqual(response.status_code, status.HTTP_429_TOO_MANY_REQUESTS)
+
+    def test_creating_content_with_dynamic_text_fields(self):
+        test1_authorization = self.obtain_jwt_token('test1')
+        title, body = self.create_title_body()
+        dynamic_text_fields = [self.create_single_text_field(), self.create_single_text_field()]
+
+        response = self.client.post(
+            reverse('contents:api:v1:content_api_view'),
+            data={'title': title, 'body': body, 'dynamic_text_fields': dynamic_text_fields},
+            HTTP_AUTHORIZATION=test1_authorization
+        )
+
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)

@@ -161,3 +161,10 @@ SIMPLE_JWT = {
 
 DEFAULT_PAGE_SIZE = 50
 DEFAULT_PAGE_INDEX = 0
+
+CMS = {
+    'DEFAULT_DYNAMIC_TEXT_FIELD_NUMBER': {
+        'basic': 5,
+        'rich': 5
+    }
+}
