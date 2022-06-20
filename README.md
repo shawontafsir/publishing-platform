@@ -2,6 +2,7 @@
 
 
 ## Features:
+- Single page application
 - Display created content list
 - See the details of a selected content
 - Permission to logged-in users for creating and 
