@@ -31,6 +31,6 @@ $ cd frontend
 $ npm install
 
 // run the parcel bundler
-$ parcel index.html
+$ parcel src/index.html
 ```
 Now, the **Frontend** is ready. Open the url built by the `parcel bundler` to the **browser**.
