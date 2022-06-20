@@ -1,0 +1,26 @@
+.text-editor-content {
+    width: 80%;
+    /*transform: translateX(-50%) translateY(-50%);*/
+    box-shadow: 0 10px 20px rgb(0, 0, 0, 0.19);
+    margin: auto;
+}
+
+.text-editor-header {
+    padding: 5px;
+    background-color: #dddddd;
+}
+
+.text-editor-header .editor-option-btn {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.text-editor-body {
+    min-height: 300px;
+    border: 1px solid #ecf8f1;
+    border-top: 0;
+    font-size: large;
+}

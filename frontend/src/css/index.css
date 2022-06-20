@@ -1,0 +1,91 @@
+.header {
+    text-align: center;
+}
+
+.home {
+    position: absolute;
+    top: 25px;
+    left: 45px;
+    right: inherit;
+    font-size: 16px;
+}
+
+#create_content {
+    position: absolute;
+    top: 25px;
+    left: 100px;
+    right: inherit;
+    font-size: 16px;
+}
+
+#title {
+    width: 50%;
+    overflow-wrap: break-word;
+    hyphens: manual;
+}
+
+#auth_button {
+    position: absolute;
+    top: 25px;
+    right: 45px;
+    left: inherit;
+    font-size: 16px;
+}
+
+#readonly_content_form #readonly_title {
+    border: 0;
+    font-size: large;
+    font-weight: bold;
+    overflow-wrap: break-word;
+    hyphens: manual;
+}
+
+#readonly_content_form #readonly_title {
+    overflow-wrap: break-word;
+    hyphens: manual;
+}
+
+#readonly_content_form span {
+    font-size: small;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    gap: 10px;
+    padding: 10px;
+}
+
+.grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
+
+.grid-column-1 {
+    grid-column-start: 1;
+    grid-column-end: 6;
+    overflow-wrap: break-word;
+    hyphens: manual;
+    width: 100%;
+    position: absolute;
+    right: 0;
+}
+
+table {
+    font-family: arial, sans-serif;
+    font-size: x-large;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 2px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
