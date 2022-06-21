@@ -6,6 +6,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
+    "@parcel/package-manager": "^2.6.1",
     "abortcontroller-polyfill": "^1.7.3",
     "acorn": "^8.7.1",
     "ansi-styles": "^4.3.0",
@@ -61,6 +62,7 @@
     "nth-check": "^2.1.1",
     "nullthrows": "^1.1.1",
     "ordered-binary": "^1.2.5",
+    "parcel-bundler": "^1.12.5",
     "parent-module": "^1.0.1",
     "parse-json": "^5.2.0",
     "path-type": "^4.0.0",
@@ -92,6 +94,7 @@
     "yaml": "^1.10.2"
   },
   "scripts": {
+    "dev": "parcel src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
