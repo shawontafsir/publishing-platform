@@ -34,7 +34,7 @@ export const readonly_content_form_component = (content) => {
             <span>Author: ${content.author}</span><br>
             <span>Created: ${content['created']}</span><br>
             <label for="body"></label><br>
-            <textarea rows="30" cols="100" name="body" id="body" form="content_form" readonly>${content.body}</textarea>
+            <div id="readonly_body">${content.body}</div><br>
         </form>
     `;
 }

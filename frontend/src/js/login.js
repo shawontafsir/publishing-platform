@@ -1,5 +1,6 @@
+import {login_url} from "./env";
+
 export const login_form_submit = async () => {
-    const login_url = `http://127.0.0.1:8000/api/token/`;
     document.getElementById('message').innerHTML = "checking";
 
     const data = {
@@ -18,7 +19,7 @@ export const login_form_submit = async () => {
                 let data = await response.json();
                 alert("Logged in Successfully.");
                 localStorage.setItem('token', data['access']);
-                location.href = '/src/index.html';
+                location.href = './index.html';
             } else {
                 throw new Error("Could not reach the API: " + response.statusText);
             }

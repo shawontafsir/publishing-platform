@@ -1,4 +1,4 @@
-import {content_form_submit} from "/src/js/content.js";
+import {content_form_submit} from "./content";
 import {login_form_submit} from "./login";
 import {rich_text_area_loader} from "./rich_text";
 import {
@@ -7,10 +7,8 @@ import {
 } from "./html_components/content_form";
 import {content_table_component, content_table_tr_component} from "./html_components/content_table";
 import {login_form_component} from "./html_components/login_form";
+import {content_url} from "./env";
 
-
-const base_url = 'http://localhost:8000/';
-const content_url = `${base_url}contents/api/v1/`;
 
 const edit_content_button_handler = () => {
     const content = JSON.parse(localStorage.getItem('content'));
@@ -72,16 +70,12 @@ const content_table_loader = async () => {
         fetch(content_url, other_params).then(async response => {
             if (response.ok) {
                 let content_list = await response.json();
-                console.log(content_list);
 
-                let table_tbody = "";
                 for (let content of content_list) {
                     document.getElementById("content_tbody").appendChild(
                         content_table_tr_component(content, content_title_click_handler)
                     );
-                    // table_tbody += content_table_tr_component(content, "content_title_click_handler");
                 }
-                // document.getElementById("content_tbody").innerHTML = table_tbody;
             } else {
                 alert(await response.text());
             }
@@ -101,7 +95,7 @@ const auth_button_handler = () => {
         document.getElementById('auth_button').innerHTML = "LOG IN";
         document.getElementById('create_content').style.display = "none";
     }
-    // location.href = "/src/html/login.html";
+
     document.getElementById('included_content').innerHTML = login_form_component();
     const login_form_element = document.getElementById('login_form');
     login_form_element.addEventListener('submit', async (event) => {

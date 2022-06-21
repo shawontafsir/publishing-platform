@@ -5,14 +5,10 @@ export const content_table_component = () => {
             <thead>
                 <th>Title</th>
                 <th>Creation Date</th>
-                <th>Action</th>
+                <th>Author</th>
             </thead>
             <tbody id="content_tbody">
-                <tr>
-<!--                    <td>3</td>-->
-<!--                    <td>4</td>-->
-<!--                    <td>5</td>-->
-                </tr>
+                <tr></tr>
             </tbody>
         </table>
     `;
@@ -23,7 +19,7 @@ export const content_table_tr_component = (content, handler) => {
     template.innerHTML = `<tr>
             <td><a href="#" data-content-id="${content.id}">${content.title}</a></td>
             <td>${new Date(content.created).toLocaleString()}</td>
-            <td></td>
+            <td style="width: 10%">${content.author}</td>
             </tr>`;
     const firstNode = template.content.firstElementChild.cloneNode(true);
     firstNode.addEventListener('click', handler);
