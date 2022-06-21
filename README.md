@@ -44,6 +44,6 @@ $ cd frontend
 $ npm install
 
 // run the parcel bundler
-$ parcel src/index.html
+$ npm run dev --port 1234
 ```
 Now, the **Frontend** is ready. Open the url built by the `parcel bundler` to the **browser**.
