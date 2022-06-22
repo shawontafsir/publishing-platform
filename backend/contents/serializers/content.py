@@ -1,5 +1,6 @@
 from django.db import transaction
-from rest_framework import serializers
+from django.db.models import QuerySet
+from rest_framework import serializers, fields
 
 from contents.datalayers.content import ContentDataLayer
 from contents.models import Content, DynamicTextField
@@ -21,6 +22,18 @@ class ContentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Content
         fields = '__all__'
+
+    def __init__(self, instance=None, data=fields.empty, **kwargs):
+        """
+        Do not need 'body' and 'dynamic_text_fields' in content list.
+        """
+        if isinstance(instance, QuerySet):
+            if 'body' in self.fields:
+                self.fields.pop('body')
+            if 'dynamic_text_fields' in self.fields:
+                self.fields.pop('dynamic_text_fields')
+
+        super().__init__(instance, data, **kwargs)
 
     def validate(self, attrs):
         """
